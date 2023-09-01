@@ -8,6 +8,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .body{
     background: url("bg.jpg");
@@ -66,3 +67,30 @@
     border: .25vmin solid black;
     border-radius: 8px;
 }
+
+@media screen and (max-width: 1049px) {
+ #hiscoreBox{
+        top: 34px;
+        right: 6px;
+        font-size: 29px;
+    }
+#scoreBox{
+    top: 0px;
+    right: 6px;
+    font-size: 29px;
+}
+#board{
+    right: 0;
+}
+.body{
+    background: url("bg.jpg");
+    /* could change the position os snake in bg image by photo editing and use that instead*/
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  }
+
