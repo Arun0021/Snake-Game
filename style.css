@@ -10,11 +10,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-.body{
+body{
     background: url("bg.jpg");
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
+}
+.body{
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,13 +72,16 @@
 }
 
 @media screen and (max-width: 1049px) {
+#controls{
+    padding-top:100px;
+}
  #hiscoreBox{
-        top: 34px;
+        top: 68px;
         right: 6px;
         font-size: 29px;
     }
 #scoreBox{
-    top: 0px;
+    top: 34px;
     right: 6px;
     font-size: 29px;
 }
@@ -94,3 +100,23 @@
 }
   }
 
+/* Style the touch control buttons */
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+  }
+  
+  #controls button {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
