@@ -7,7 +7,17 @@ let speed = 10;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
+//food = {x:6,y:7};
 let food = { x: 6, y: 7 };
+//gamefunction
+function main(ctime) {
+  window.requestAnimationFrame(main);
+  if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
+    return;
+  }
+  lastPaintTime = ctime;
+  gameEngine();
+}
 
 const upButton = document.getElementById("up-button");
 const downButton = document.getElementById("down-button");
@@ -42,14 +52,7 @@ rightButton.addEventListener("click", () => {
   }
 });
 
-function main(ctime) {
-  window.requestAnimationFrame(main);
-  if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
-    return;
-  }
-  lastPaintTime = ctime;
-  gameEngine();
-}
+
 
 function isCollide(snake) {
   for (let i = 1; i < snake.length; i++) {
@@ -142,4 +145,36 @@ function play(e) {
 }
 
 window.addEventListener('keydown', e => { play(e) });
+/*
+window.addEventListener('keydown', e =>{
+    inputDir = {x:0,y:1};
+    moveSound.play();
+    switch(e.key){
+        case "ArrowUp":
+            console.log("ArrowUp");
+            inputDir.x=0;
+            inputDir.y=-1;
+
+        break;
+        case "ArrowDown":
+            console.log("ArrowDown");
+            inputDir.x=0;
+            inputDir.y=1;
+        break;
+        case "ArrowLeft":
+            console.log("ArrowLeft");
+            inputDir.x=-1;
+            inputDir.y=0;
+        break;
+        case "ArrowRight":
+            console.log("ArrowRight");
+            inputDir.x=1;
+            inputDir.y=0;
+        break;
+
+        default:break;
+    }
+
+});
+*/
 
